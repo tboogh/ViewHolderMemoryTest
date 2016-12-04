@@ -45,18 +45,18 @@ namespace ViewHolderMemoryTest
             _recyclerView.SetAdapter(_pictureSectionAdapter);
         }
 
-        public override void OnResume()
-        {
-            base.OnResume();
-            
-        }
-
         public override void OnDestroyView()
         {
             base.OnDestroyView();
             _recyclerView = null;
 
             GC.Collect();
+        }
+
+        public override void OnResume()
+        {
+            base.OnResume();
+            
         }
     }
 }

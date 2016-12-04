@@ -10,6 +10,8 @@ using Android.Widget;
 using Android.OS;
 using Android.Support.V4.App;
 using Android.Support.V7.App;
+using Microsoft.Practices.Unity;
+using ViewHolderMemoryTest.Core.Services;
 using Fragment = Android.App.Fragment;
 using FragmentManager = Android.App.FragmentManager;
 using FragmentTransaction = Android.App.FragmentTransaction;
@@ -19,12 +21,16 @@ namespace ViewHolderMemoryTest
     [Activity(Label = "ViewHolderMemoryTest", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : AppCompatActivity
     {
+        public static  UnityContainer Container;
+
         private List<IDisposable> _disposables = new List<IDisposable>();
         private FragmentAdapter _fragmentAdapter;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             // tests can be inside the main assembly
+            Container = new UnityContainer();
+            Container.RegisterType<IHttpService, HttpService>();
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);

@@ -14,6 +14,7 @@ namespace ViewHolderMemoryTest
     {
         private readonly Context _context;
         private string[] _urls;
+        private string _planet;
 
         public PictureRowAdapter(Context context)
         {
@@ -22,6 +23,13 @@ namespace ViewHolderMemoryTest
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
+            if (position == 0)
+            {
+                TitleViewHolder titleViewHolder = (TitleViewHolder) holder;
+                titleViewHolder.TextView.Text = _planet;
+                return;
+            }
+
             string url = _urls[position];
             PictureViewHolder pictureViewHolder = (PictureViewHolder) holder;
             pictureViewHolder.Init();
@@ -43,27 +51,46 @@ namespace ViewHolderMemoryTest
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            View view = LayoutInflater.From(parent.Context)
+            if (viewType == 1)
+            {
+                View view = LayoutInflater.From(parent.Context)
                 .Inflate(Resource.Layout.PictureView, parent, false);
-
-            PictureViewHolder viewHolder = new PictureViewHolder(view);
+                PictureViewHolder pictureViewHolder = new PictureViewHolder(view);
+                return pictureViewHolder;
+            }
+            View titleView = LayoutInflater.From(parent.Context)
+                .Inflate(Resource.Layout.RowLabel, parent, false);
+            TitleViewHolder viewHolder = new TitleViewHolder(titleView);
             return viewHolder;
         }
 
         public override void OnViewRecycled(Object holder)
         {
             base.OnViewRecycled(holder);
-            PictureViewHolder viewHolder = (PictureViewHolder) holder;
+            PictureViewHolder viewHolder = holder as PictureViewHolder;
+
+            if (viewHolder == null)
+                return;
             Picasso.With(_context)
                 .CancelRequest(viewHolder.ImageView);
             viewHolder.Cleanup();
         }
 
-        public override int ItemCount => _urls?.Length ?? 0;
+        public override int GetItemViewType(int position)
+        {
+            if (position == 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
 
-        public void Update(string[] urls)
+        public override int ItemCount => _urls?.Length + 1 ?? 1;
+
+        public void Update(string[] urls, string planet)
         {
             _urls = urls;
+            _planet = planet;
             NotifyDataSetChanged();
         }
     }

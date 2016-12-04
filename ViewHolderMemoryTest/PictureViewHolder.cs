@@ -1,26 +1,35 @@
 using System;
-using Android.Content;
+using System.Diagnostics;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
-using FFImageLoading.Views;
-
 
 namespace ViewHolderMemoryTest
 {
+    public class TitleViewHolder : RecyclerView.ViewHolder
+    {
+        public TitleViewHolder(View itemView) : base(itemView)
+        {
+            TextView = itemView.FindViewById<TextView>(Resource.Id.textView1);
+        }
+
+        public TextView TextView { get; set; }
+    }
+
     public class PictureViewHolder : RecyclerView.ViewHolder
     {
-        public ImageView ImageView { get; }
-        public ProgressBar ProgressBar { get; }
         public PictureViewHolder(View itemView) : base(itemView)
         {
             ImageView = itemView.FindViewById<ImageView>(Resource.Id.imageView);
             ProgressBar = itemView.FindViewById<ProgressBar>(Resource.Id.progressBar);
         }
 
+        public ImageView ImageView { get; }
+        public ProgressBar ProgressBar { get; }
+
         private void ImageViewOnClick(object sender, EventArgs eventArgs)
         {
-            System.Diagnostics.Debug.WriteLine("Clicked!");
+            Debug.WriteLine("Clicked!");
         }
 
         public void Init()

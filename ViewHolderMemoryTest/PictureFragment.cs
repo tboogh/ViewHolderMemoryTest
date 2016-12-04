@@ -16,11 +16,15 @@ using Response = ViewHolderMemoryTest.Core.Models.Seti.Response;
 
 namespace ViewHolderMemoryTest
 {
-    public class PictureFragment : Fragment
+    public class PictureFragment : Fragment, IPictureFragment
     {
         private PictureSectionAdapter _pictureSectionAdapter;
         private LinearLayoutManager _layoutManager;
         private RecyclerView _recyclerView;
+
+        public PictureFragment()
+        {
+        }
 
         public override void OnCreate(Bundle savedInstanceState)
         {

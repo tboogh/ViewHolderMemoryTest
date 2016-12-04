@@ -28,6 +28,11 @@ namespace ViewHolderMemoryTest.Core.Services
         public async Task<Models.Seti.Response> GetSetiResponse(string searchName, CancellationToken cancellationToken)
         {
             HttpResponseMessage result = await _httpClient.GetAsync($"http://tools.pds-rings.seti.org/opus/api/images/full.json?planet={searchName}", cancellationToken);
+            if (cancellationToken.IsCancellationRequested)
+            {
+                
+            }
+
             string content = await result.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<Models.Seti.Response>(content);
         }

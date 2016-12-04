@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Android.Content;
 using Android.Support.V7.Widget;
 using Android.Views;
+using Microsoft.Practices.Unity;
 using ViewHolderMemoryTest.Core.Models.Seti;
 using ViewHolderMemoryTest.Core.Services;
 
@@ -41,10 +42,12 @@ namespace ViewHolderMemoryTest
 
         public async void Update(string planet)
         {
+            _adapter.Update(null, planet);
+
             _cancellationTokenSource?.Cancel();
             _cancellationTokenSource = new CancellationTokenSource(TimeSpan.FromSeconds(15));
 
-            IHttpService httpService = new HttpService();
+            IHttpService httpService = MainActivity.Container.Resolve<IHttpService>();
             Response response = null;
             try
             {
@@ -59,7 +62,7 @@ namespace ViewHolderMemoryTest
                 .ToArray();
 
             if (urls != null)
-                _adapter.Update(urls);
+                _adapter.Update(urls, planet);
         }
     }
 }

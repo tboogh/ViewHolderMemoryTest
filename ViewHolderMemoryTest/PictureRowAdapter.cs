@@ -30,7 +30,7 @@ namespace ViewHolderMemoryTest
                 return;
             }
 
-            string url = _urls[position];
+            string url = _urls[position - 1];
             PictureViewHolder pictureViewHolder = (PictureViewHolder) holder;
             pictureViewHolder.Init();
             Picasso.With(_context)

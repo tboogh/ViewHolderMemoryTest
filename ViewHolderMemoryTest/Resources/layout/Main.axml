@@ -26,20 +26,20 @@
             android:layout_height="match_parent"
             android:id="@+id/button2"
             android:layout_weight="1" />
-      <Button
+        <Button
             android:text="Three"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/button3"
             android:layout_weight="1" />
-      <Button
+        <Button
             android:text="Four"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/button4"
             android:layout_weight="1" />
-      <Button
-            android:text="Five"
+        <Button
+            android:text="Pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/button5"

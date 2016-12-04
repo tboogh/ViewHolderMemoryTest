@@ -90,6 +90,10 @@ namespace ViewHolderMemoryTest
         public override int Count => _fragmentCount;
         public override Fragment GetItem(int position)
         {
+            if (position == 4)
+            {
+                return new PagerFragment();
+            }
             return new PictureFragment();
         }
     }

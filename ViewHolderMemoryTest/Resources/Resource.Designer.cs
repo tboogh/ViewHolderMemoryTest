@@ -1477,11 +1477,14 @@ namespace ViewHolderMemoryTest
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060066
-			public const int PictureRowContainer = 2131099750;
+			// aapt resource value: 0x7f060067
+			public const int PictureRowContainer = 2131099751;
 			
-			// aapt resource value: 0x7f060065
-			public const int PictureSectionContainer = 2131099749;
+			// aapt resource value: 0x7f060066
+			public const int PictureSectionContainer = 2131099750;
+			
+			// aapt resource value: 0x7f06006b
+			public const int PlanetImageRecyclerView = 2131099755;
 			
 			// aapt resource value: 0x7f060057
 			public const int action0 = 2131099735;
@@ -1621,8 +1624,8 @@ namespace ViewHolderMemoryTest
 			// aapt resource value: 0x7f060027
 			public const int image = 2131099687;
 			
-			// aapt resource value: 0x7f060067
-			public const int imageView = 2131099751;
+			// aapt resource value: 0x7f060068
+			public const int imageView = 2131099752;
 			
 			// aapt resource value: 0x7f060062
 			public const int info = 2131099746;
@@ -1663,8 +1666,8 @@ namespace ViewHolderMemoryTest
 			// aapt resource value: 0x7f06002e
 			public const int parentPanel = 2131099694;
 			
-			// aapt resource value: 0x7f060068
-			public const int progressBar = 2131099752;
+			// aapt resource value: 0x7f060069
+			public const int progressBar = 2131099753;
 			
 			// aapt resource value: 0x7f060006
 			public const int progress_circular = 2131099654;
@@ -1765,8 +1768,11 @@ namespace ViewHolderMemoryTest
 			// aapt resource value: 0x7f060035
 			public const int textSpacerNoButtons = 2131099701;
 			
-			// aapt resource value: 0x7f060064
-			public const int textView1 = 2131099748;
+			// aapt resource value: 0x7f06006a
+			public const int textView = 2131099754;
+			
+			// aapt resource value: 0x7f060065
+			public const int textView1 = 2131099749;
 			
 			// aapt resource value: 0x7f06005d
 			public const int time = 2131099741;
@@ -1785,6 +1791,9 @@ namespace ViewHolderMemoryTest
 			
 			// aapt resource value: 0x7f060013
 			public const int useLogo = 2131099667;
+			
+			// aapt resource value: 0x7f060064
+			public const int viewPager = 2131099748;
 			
 			// aapt resource value: 0x7f060021
 			public const int withText = 2131099681;
@@ -1936,28 +1945,34 @@ namespace ViewHolderMemoryTest
 			public const int notification_template_part_time = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int PictureListFragment = 2130903074;
+			public const int PagerFragment = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int PictureSectionLayout = 2130903075;
+			public const int PictureListFragment = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int PictureView = 2130903076;
+			public const int PictureSectionLayout = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int RowLabel = 2130903077;
+			public const int PictureView = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int select_dialog_item_material = 2130903078;
+			public const int PlanetFragment = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int select_dialog_multichoice_material = 2130903079;
+			public const int RowLabel = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int select_dialog_singlechoice_material = 2130903080;
+			public const int select_dialog_item_material = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int support_simple_spinner_dropdown_item = 2130903081;
+			public const int select_dialog_multichoice_material = 2130903081;
+			
+			// aapt resource value: 0x7f03002a
+			public const int select_dialog_singlechoice_material = 2130903082;
+			
+			// aapt resource value: 0x7f03002b
+			public const int support_simple_spinner_dropdown_item = 2130903083;
 			
 			static Layout()
 			{

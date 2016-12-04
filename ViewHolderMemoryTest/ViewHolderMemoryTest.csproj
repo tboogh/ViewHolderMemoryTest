@@ -134,18 +134,22 @@
   <ItemGroup>
     <Compile Include="IPictureFragment.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="PagerFragment.cs" />
     <Compile Include="PictureRowAdapter.cs" />
     <Compile Include="PictureFragment.cs" />
     <Compile Include="PictureSectionAdapter.cs" />
     <Compile Include="PictureSectionViewHolder.cs" />
     <Compile Include="PictureViewHolder.cs" />
+    <Compile Include="PlanetFragment.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="GettingStarted.Xamarin" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\PictureListFragment.axml">
@@ -158,6 +162,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\RowLabel.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PagerFragment.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PlanetFragment.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
